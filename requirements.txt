@@ -1,7 +1,5 @@
-requests==2.25.1
-clint==0.5.1
-webdriver_manager==3.4.2
-wheel==0.36.2
-pip==21.2.4
-selenium==3.141.0
-TikTokApi==4.0.1
+# Core dependencies
+TikTokApi>=7.2.0
+requests>=2.32.0
+selenium>=4.26.0
+webdriver-manager>=4.0.0

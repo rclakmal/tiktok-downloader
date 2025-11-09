@@ -1,64 +1,62 @@
-# TikTok-Downloader
-Simple Python+Selenium script to download TikTok videos for a given user or hashtag without water marks. 
-This uses [TikTokAPI](https://davidteather.github.io/TikTok-Api/docs/) to fetch relevant data and https://snaptik.app/ to generate videos without watermarks. 
-All credits to developers of those two modules. 
+# TikTok Downloader
 
+Modern Python-based TikTok video downloader with support for username and hashtag downloads.
+
+**Credits**: Uses [TikTokApi](https://github.com/davidteather/TikTok-Api) for metadata fetching and [SnapTik](https://snaptik.app) for video downloads.
 
 ## Features
-- Takes a Tiktok user name or a hashtag and downloads X TikToks starting from most recent ones
-  - You can define how many TikToks to be downloaded
-  
 
-## Git Installtion
+- Download videos by username or hashtag
+- Sort by most recent, most viewed, or oldest
+- Configurable fetch windows for performance vs accuracy
+- Headless browser automation
+- Progress tracking
+
+## Installation
+
+```bash
+# Install Python dependencies
+pip install -r requirements.txt
+
+# Install Playwright browsers
+python -m playwright install
 ```
-# clone the repo
-$ git clone https://github.com/CuriousYoda/tiktok-downloader.git
 
-# change the working directory to Tiktok-Video-Downloader
-$ cd tiktok-downloader
+## Configuration
 
-# install the requirements
-$ pip3 install -r requirements.txt
+Edit `tik-tok-scraper.properties`:
+
+```ini
+[UserInput]
+BASE_FOLDER = ../../Downloads/tiktok
 ```
-
-## Required Properties/Dependencies
-- You need to have chrome browser installed.
-- You need to download the correct [chromedriver](https://chromedriver.chromium.org/downloads) version and add that into the tiktok-downloader folder. 
-- Set up the folder path to download tiktoks in the properties file
 
 ## Usage
+
+```bash
+python tik-tok-scraper.py
 ```
-$ python tik-tok-scraper.py
 
-```
+Follow the interactive prompts to:
+1. Choose download by username or hashtag
+2. Select sorting option (recent/viewed/oldest)
+3. Set fetch window size (for sorted downloads)
+4. Specify number of videos
 
-## Screenshots
-![image](https://user-images.githubusercontent.com/86459866/130412994-3fb4c48a-4820-439a-b517-74771f90af61.png)
+Videos are saved to `BASE_FOLDER/{username}` or `BASE_FOLDER/{hashtag}`.
 
+## Requirements
 
-## Development & Packaging
-- 
+- Python 3.10+
+- Chrome/Chromium browser
+- Active internet connection
 
-## Known Issues
-- If you get a Captcha error, please set up a custom verifyfp value in the property file. Here is [how to create a verifyfp](https://www.youtube.com/watch?v=MgjorCvPzxg)
+## Troubleshooting
 
+- **Rate limited**: Wait a few minutes or use a VPN
+- **Private accounts**: Cannot download from private accounts
+- **No videos found**: Verify username/hashtag spelling
 
-Copyright (c) [2021] [[@CuriousYoda](https://twitter.com/CuriousYoda)]
+## License
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+MIT License - See LICENSE file for details
